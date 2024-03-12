@@ -1,14 +1,16 @@
 ﻿using BME280_SensorData.Models;
+using BME280_SensorData.Settings;
 using Newtonsoft.Json;
 using System.IO.Ports;
 
-string portName = "COM3";
-int baudRate = 9600;
-var parity = Parity.None;
-int dataBits = 8;
-var stopBits = StopBits.One;
+SerialPortSettings serialPortSettings = new();
 
-var serialPort = new SerialPort(portName, baudRate, parity, dataBits, stopBits);
+var serialPort = new SerialPort(
+    serialPortSettings.PortName,
+    serialPortSettings.BaudRate,
+    serialPortSettings.Parity,
+    serialPortSettings.DataBits,
+    serialPortSettings.StopBits);
 
 try
 {
