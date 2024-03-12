@@ -62,7 +62,7 @@ void printJsonValues(){
   doc["Temperature"] = bme.readTemperature();
   doc["Humidity"] = bme.readHumidity();
   doc["Pressure"] = bme.readPressure();
-  doc["Altitude"] = bme.readAltitude(1013.25);
+  doc["Altitude"] = bme.readAltitude(SEALEVEL_HPA);
 
   char jsonString[200];
   serializeJson(doc, jsonString);
