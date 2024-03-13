@@ -20,56 +20,68 @@ int lcdKey = 0;
 int adcKeyIn = 0;
 unsigned long delayTime;
 
-
 // put function declarations here:
 void printValues();
 void printJsonValues();
+void loopLCD();
+int readLCDButtons();
 
-void setup() {
+void setup()
+{
   // put your setup code here, to run once:
   Wire.begin(40);
   Serial.begin(9600);
+
+  lcd.begin(16, 2);
+  lcd.setCursor(0, 0);
+  lcd.print("Hallo Wereld!");
 
   bool status;
   status = bme.begin();
   if (!status)
   {
     Serial.println("No BME280 Sensor found!");
-    while (1);
+    while (1)
+      ;
   }
   delayTime = 10000;
 
   Serial.println();
 }
 
-void loop() {
+void loop()
+{
   // put your main code here, to run repeatedly:
   printJsonValues();
-  delay(delayTime);
+  loopLCD();
 }
 
 // put function definitions here:
-void printValues() {
+void printValues()
+{
   Serial.print("Temperature = ");
   Serial.print(bme.readTemperature());
   Serial.println(" *C");
-  
+
   Serial.print("Pressure = ");
   Serial.print(bme.readPressure() / 100.0F);
   Serial.println(" hPa");
-  
+
   Serial.print("Approx. Altitude = ");
   Serial.print(bme.readAltitude(SEALEVEL_HPA));
   Serial.println(" m");
-  
+
   Serial.print("Humidity = ");
   Serial.print(bme.readHumidity());
   Serial.println(" %");
-  
+
   Serial.println();
+
+  delay(delayTime);
 }
 
-void printJsonValues(){
+void printJsonValues()
+{
   StaticJsonDocument<200> doc;
 
   doc["Temperature"] = bme.readTemperature();
@@ -81,4 +93,80 @@ void printJsonValues(){
   serializeJson(doc, jsonString);
 
   Serial.println(jsonString);
+  delay(delayTime);
+}
+
+int readLCDButtons()
+{
+  adcKeyIn = analogRead(0); // read the value from the sensor
+  // my buttons when read are centered at these valies: 0, 144, 329, 504, 741
+  // we add approx 50 to those values and check to see if we are close
+  // We make this the 1st option for speed reasons since it will be the most likely result
+  if (adcKeyIn > 1000)
+    return btnNONE;
+  // For V1.1 us this threshold
+  if (adcKeyIn < 50)
+    return btnRIGHT;
+  if (adcKeyIn < 250)
+    return btnUP;
+  if (adcKeyIn < 450)
+    return btnDOWN;
+  if (adcKeyIn < 650)
+    return btnLEFT;
+  if (adcKeyIn < 850)
+    return btnSELECT;
+  // For V1.0 comment the other threshold and use the one below:
+  /*
+  if (adc_key_in < 50) return btnRIGHT;
+  if (adc_key_in < 195) return btnUP;
+  if (adc_key_in < 380) return btnDOWN;
+  if (adc_key_in < 555) return btnLEFT;
+  if (adc_key_in < 790) return btnSELECT;
+  */
+  return btnNONE; // when all others fail, return this...
+}
+
+void loopLCD()
+{
+  lcd.setCursor(9, 1);         // move cursor to second line "1" and 9 spaces over
+  lcd.print(millis() / 1000);  // display seconds elapsed since power-up
+  lcd.setCursor(0, 1);         // move to the begining of the second line
+  lcdKey = readLCDButtons(); // read the buttons
+  switch (lcdKey)              // depending on which button was pushed, we perform an action
+  {
+  case btnRIGHT:
+  {
+    lcd.print("RIGHT ");
+    break;
+  }
+  case btnLEFT:
+  {
+    // if You need the word "LEFT " shown on the display than use lcd.print("LEFT ") instead of
+    lcd.print(adcKeyIn) and lcd.print(" v");
+    // the following 2 lines will print the actual threshold voltage present at analog input 0 ; As these buttons are part of a voltage divider, pressing each button creates a different threshold voltage
+    lcd.print(adcKeyIn); // shows the actual threshold voltage at analog input 0
+    lcd.print(" v");     // ends with v(olt)
+    break;
+  }
+  case btnUP:
+  {
+    lcd.print("UP ");
+    break;
+  }
+  case btnDOWN:
+  {
+    lcd.print("DOWN ");
+    break;
+  }
+  case btnSELECT:
+  {
+    lcd.print("SELECT");
+    break;
+  }
+  case btnNONE:
+  {
+    lcd.print("TEST ");
+    break;
+  }
+  }
 }
