@@ -15,6 +15,7 @@ void printJsonValues();
 
 void setup() {
   // put your setup code here, to run once:
+  Wire.begin(40);
   Serial.begin(9600);
 
   bool status;

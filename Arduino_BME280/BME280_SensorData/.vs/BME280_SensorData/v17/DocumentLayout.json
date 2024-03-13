@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{E1B25651-EF04-4D29-822A-2EB46FB76316}|BME280_SensorData\\BME280_SensorData.csproj|c:\\dev\\uno_bme280\\arduino_bme280\\bme280_sensordata\\bme280_sensordata\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1B25651-EF04-4D29-822A-2EB46FB76316}|BME280_SensorData\\BME280_SensorData.csproj|solutionrelative:bme280_sensordata\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1B25651-EF04-4D29-822A-2EB46FB76316}|BME280_SensorData\\BME280_SensorData.csproj|c:\\dev\\uno_bme280\\arduino_bme280\\bme280_sensordata\\bme280_sensordata\\settings\\serialportsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1B25651-EF04-4D29-822A-2EB46FB76316}|BME280_SensorData\\BME280_SensorData.csproj|solutionrelative:bme280_sensordata\\settings\\serialportsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 253,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,13 +30,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SerialPortSettings.cs",
+              "DocumentMoniker": "C:\\Dev\\Uno_BME280\\Arduino_BME280\\BME280_SensorData\\BME280_SensorData\\Settings\\SerialPortSettings.cs",
+              "RelativeDocumentMoniker": "BME280_SensorData\\Settings\\SerialPortSettings.cs",
+              "ToolTip": "C:\\Dev\\Uno_BME280\\Arduino_BME280\\BME280_SensorData\\BME280_SensorData\\Settings\\SerialPortSettings.cs",
+              "RelativeToolTip": "BME280_SensorData\\Settings\\SerialPortSettings.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBwAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T18:02:05.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Dev\\Uno_BME280\\Arduino_BME280\\BME280_SensorData\\BME280_SensorData\\Program.cs",
               "RelativeDocumentMoniker": "BME280_SensorData\\Program.cs",
               "ToolTip": "C:\\Dev\\Uno_BME280\\Arduino_BME280\\BME280_SensorData\\BME280_SensorData\\Program.cs",
               "RelativeToolTip": "BME280_SensorData\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAhAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T19:41:05.183Z",
               "EditorCaption": ""

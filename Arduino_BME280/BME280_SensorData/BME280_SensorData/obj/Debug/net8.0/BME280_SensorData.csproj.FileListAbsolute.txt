@@ -23,3 +23,4 @@ C:\Dev\Uno_BME280\Arduino_BME280\BME280_SensorData\BME280_SensorData\bin\Debug\n
 C:\Dev\Uno_BME280\Arduino_BME280\BME280_SensorData\BME280_SensorData\obj\Debug\net8.0\BME280_SensorData.csproj.AssemblyReference.cache
 C:\Dev\Uno_BME280\Arduino_BME280\BME280_SensorData\BME280_SensorData\obj\Debug\net8.0\BME280_S.7155B94A.Up2Date
 C:\Dev\Uno_BME280\Arduino_BME280\BME280_SensorData\BME280_SensorData\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Dev\Uno_BME280\Arduino_BME280\BME280_SensorData\BME280_SensorData\obj\Debug\net8.0\BME280_SensorData.sourcelink.json

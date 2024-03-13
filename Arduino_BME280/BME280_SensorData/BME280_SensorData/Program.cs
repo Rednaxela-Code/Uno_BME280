@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System.IO.Ports;
 
 SerialPortSettings serialPortSettings = new();
+serialPortSettings.InitSettings();
 
 var serialPort = new SerialPort(
     serialPortSettings.PortName,
