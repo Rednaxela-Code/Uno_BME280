@@ -20,6 +20,7 @@ int lcdKey = 0;
 int adcKeyIn = 0;
 unsigned long delayTime;
 
+
 // put function declarations here:
 void printValues();
 void printJsonValues();
@@ -33,8 +34,6 @@ void setup()
   Serial.begin(9600);
 
   lcd.begin(16, 2);
-  lcd.setCursor(0, 0);
-  lcd.print("Hallo Wereld!");
 
   bool status;
   status = bme.begin();
@@ -52,7 +51,7 @@ void setup()
 void loop()
 {
   // put your main code here, to run repeatedly:
-  printJsonValues();
+  //printJsonValues();
   loopLCD();
 }
 
@@ -128,45 +127,14 @@ int readLCDButtons()
 
 void loopLCD()
 {
+  lcd.setCursor(0, 0);
+  String humText = "Hum hPa: ";
+  lcd.print(humText += bme.readHumidity());
   lcd.setCursor(9, 1);         // move cursor to second line "1" and 9 spaces over
-  lcd.print(millis() / 1000);  // display seconds elapsed since power-up
+
   lcd.setCursor(0, 1);         // move to the begining of the second line
   lcdKey = readLCDButtons(); // read the buttons
-  switch (lcdKey)              // depending on which button was pushed, we perform an action
-  {
-  case btnRIGHT:
-  {
-    lcd.print("RIGHT ");
-    break;
-  }
-  case btnLEFT:
-  {
-    // if You need the word "LEFT " shown on the display than use lcd.print("LEFT ") instead of
-    lcd.print(adcKeyIn) and lcd.print(" v");
-    // the following 2 lines will print the actual threshold voltage present at analog input 0 ; As these buttons are part of a voltage divider, pressing each button creates a different threshold voltage
-    lcd.print(adcKeyIn); // shows the actual threshold voltage at analog input 0
-    lcd.print(" v");     // ends with v(olt)
-    break;
-  }
-  case btnUP:
-  {
-    lcd.print("UP ");
-    break;
-  }
-  case btnDOWN:
-  {
-    lcd.print("DOWN ");
-    break;
-  }
-  case btnSELECT:
-  {
-    lcd.print("SELECT");
-    break;
-  }
-  case btnNONE:
-  {
-    lcd.print("TEST ");
-    break;
-  }
-  }
+
+  String tempText = "Temp  C: ";
+   lcd.print(tempText += bme.readTemperature());
 }
