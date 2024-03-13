@@ -3,11 +3,23 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
 #include <ArduinoJson.h>
+#include <LiquidCrystal.h>
 
 #define SEALEVEL_HPA (1013.25)
+#define btnRIGHT 0
+#define btnUP 1
+#define btnDOWN 2
+#define btnLEFT 3
+#define btnSELECT 4
+#define btnNONE 5
 
 Adafruit_BME280 bme;
+LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
+
+int lcdKey = 0;
+int adcKeyIn = 0;
 unsigned long delayTime;
+
 
 // put function declarations here:
 void printValues();
