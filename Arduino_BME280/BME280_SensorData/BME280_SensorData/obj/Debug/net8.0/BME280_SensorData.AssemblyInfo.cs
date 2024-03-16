@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BME280_SensorData")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c31ae91667b532c41298faefde6e9c73f20c5418")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dcd2f71651cba5be726629d574b9c395c506e082")]
 [assembly: System.Reflection.AssemblyProductAttribute("BME280_SensorData")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BME280_SensorData")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
