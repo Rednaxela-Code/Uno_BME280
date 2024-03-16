@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BME280_SensorData
-build_property.ProjectDir = c:\Dev\Uno_BME280\Arduino_BME280\BME280_SensorData\BME280_SensorData\
+build_property.ProjectDir = C:\Dev\Uno_BME280\Arduino_BME280\BME280_SensorData\BME280_SensorData\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

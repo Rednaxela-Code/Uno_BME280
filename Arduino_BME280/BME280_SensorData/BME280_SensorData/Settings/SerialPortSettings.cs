@@ -26,7 +26,7 @@ namespace BME280_SensorData.Settings
 
         public void InitSettings()
         {
-            PortName = "COM3";
+            PortName = "COM4";
             BaudRate = 9600;
             Parity = Parity.None;
             DataBits = 8;
